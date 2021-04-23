@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private double storedValue = 0.0;
     private Operand operand = Operand.NONE;
 
-    enum Operand{
+    enum Operand {
         NONE,
         PLUS,
         MINUS,
@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         MODULUS,
         DIVISION
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View view){
 
-        switch(view.getId()){
+        switch (view.getId()){
             case R.id.ac_button:
                 calculatorView.setText("0");
                 currentValue = 0.0;
                 break;
             case R.id.zero_button:
-                if(currentValue != 0){
+                if(currentValue != 0) {
                     double value = currentValue * 10;
                     calculatorView.setText(value + "");
                     currentValue = value;
@@ -71,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.one_button:
                 setNumber(1);
                 break;
+
             case R.id.multi_button:
                 doCalculation(Operand.MULTIPLY);
                 break;
@@ -80,25 +80,26 @@ public class MainActivity extends AppCompatActivity {
             case R.id.modulus_button:
                 doCalculation(Operand.MODULUS);
                 break;
-            case R.id.minus_button:
+            case R.id.sub_button:
                 doCalculation(Operand.MINUS);
                 break;
             case R.id.plus_button:
                 doCalculation(Operand.PLUS);
                 break;
-            case R.id.eqauls_button:
+            case R.id.equals_button:
                 getResult();
                 break;
             case R.id.period_button:
 
                 break;
-            case R.id.negate_button:
 
+            case R.id.negate_button:
                 break;
+
         }
     }
 
-    public void doCalculation(Operand operand){
+    private void doCalculation(Operand operand) {
         getResult();
         storedValue = currentValue;
         currentValue = 0;
@@ -106,11 +107,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getResult(){
-        double result = 0.0;
 
-        switch (operand) {
+        double result = 0;
+
+        switch (operand){
             default:
-                result = currentValue;
+                result = currentValue +1;
                 break;
             case PLUS:
                 result = storedValue + currentValue;
@@ -128,13 +130,18 @@ public class MainActivity extends AppCompatActivity {
                 result = storedValue * currentValue;
                 break;
         }
+
+        operand = Operand.NONE;
+        storedValue = 0;
+        currentValue = result;
+        calculatorView.setText(currentValue+"");
     }
 
-    public void setNumber(int num){
+    private void setNumber(int num) {
         if(currentValue == 0){
-            calculatorView.setText("" + num);
+            calculatorView.setText(""+num);
             currentValue = num;
-        }else{
+        } else {
             String value = calculatorView.getText().toString() + num;
             Log.d("TAG_X", value);
             currentValue = Double.parseDouble(value);

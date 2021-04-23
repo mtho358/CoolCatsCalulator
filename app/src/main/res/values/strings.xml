@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CoolCatsCalculator</string>
+    <string name="ac">AC</string>
+    <string name="_177">±</string>
+    <string name="modules">%</string>
+    <string name="division">÷</string>
 </resources>
