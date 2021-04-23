@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity"
     android:background="@color/darkCoolGray">
 
     <TextView
@@ -19,14 +17,10 @@
         android:padding="8dp"
         android:textColor="@color/white"
         android:background="@color/darkCoolGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight=".14"
-        >
 
         <androidx.appcompat.widget.AppCompatButton
             style="@style/CalculatorButton"
@@ -74,14 +68,6 @@
             android:layout_weight=".25"
             android:text="SIN" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight=".14"
-        >
         <androidx.appcompat.widget.AppCompatButton
             style="@style/CalculatorButton"
             android:background="@color/coolGray"
@@ -126,14 +112,6 @@
             android:layout_weight=".25"
             android:text="COS" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight=".14"
-        >
         <androidx.appcompat.widget.AppCompatButton
             style="@style/CalculatorButton"
             android:background="@color/coolGray"
@@ -179,14 +157,6 @@
             android:layout_weight=".25"
             android:text="TAN" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight=".14"
-        >
         <androidx.appcompat.widget.AppCompatButton
             style="@style/CalculatorButton"
             android:background="@color/coolGray"
@@ -232,16 +202,6 @@
             android:layout_weight=".25"
             android:text="&#8730;" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight=".14"
-        >
-
-
         <androidx.appcompat.widget.AppCompatButton
             style="@style/CalculatorButton"
             android:background="@color/coolGray"
@@ -276,5 +236,4 @@
             android:layout_weight=".2"
             android:text="=" />
 
-    </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
