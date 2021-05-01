@@ -96,6 +96,95 @@ public class MainActivity extends AppCompatActivity {
             case R.id.negate_button:
                 break;
 
+            case R.id.mr_button:
+                break;
+
+            case R.id.ten_to_power_button:
+                break;
+
+            case R.id.log_button:
+                break;
+
+            case R.id.exponentional_notational_button:
+                break;
+
+            case R.id.rand_button:
+                break;
+
+            case R.id.m_minus_button:
+                break;
+
+            case R.id.e_power_x_button:
+                break;
+
+            case R.id.ln_button:
+                break;
+
+            case R.id.e_button:
+                break;
+
+            case R.id.pi_button:
+                break;
+
+            case R.id.m_plus_button:
+                break;
+
+            case R.id.x_power_x_button:
+                break;
+
+            case R.id.y_root_x:
+                break;
+
+            case R.id.tan_button:
+                break;
+
+            case R.id.tanh_button:
+                break;
+
+            case R.id.mc_button:
+                break;
+
+            case R.id.x_power_three_button:
+                break;
+
+            case R.id.cos_button:
+                break;
+
+            case R.id.cosh_button:
+                break;
+
+            case R.id.closed_round_brace_button:
+                break;
+
+            case R.id.x_power_two_button:
+                break;
+
+            case R.id.two_root_x:
+                break;
+
+            case R.id.sin_button:
+                break;
+
+            case R.id.sinh_button:
+                break;
+
+            case R.id.open_round_brace_button:
+                break;
+
+            case R.id.second_button:
+                break;
+
+            case R.id.one_over_x:
+                break;
+
+            case R.id.factorial_button:
+                break;
+
+                case R.id.rad_button:
+                    break;
+
+
+
         }
     }
 
