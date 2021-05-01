@@ -20,7 +20,13 @@ public class MainActivity extends AppCompatActivity {
         MINUS,
         MULTIPLY,
         MODULUS,
-        DIVISION
+        DIVISION,
+        SIN,
+        SINH,
+        COS,
+        COSH,
+        TAN,
+        TANH
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,9 +142,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.tan_button:
+                doCalculation(operand.TAN);
                 break;
 
             case R.id.tanh_button:
+                doCalculation(operand.TANH);
                 break;
 
             case R.id.mc_button:
@@ -148,9 +156,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.cos_button:
+                doCalculation(operand.COS);
                 break;
 
             case R.id.cosh_button:
+                doCalculation(operand.COSH);
                 break;
 
             case R.id.closed_round_brace_button:
@@ -163,9 +173,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.sin_button:
+                doCalculation(operand.SIN);
                 break;
 
             case R.id.sinh_button:
+                doCalculation(operand.SINH);
                 break;
 
             case R.id.open_round_brace_button:
@@ -217,6 +229,24 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case MULTIPLY:
                 result = storedValue * currentValue;
+                break;
+            case SIN:
+                result = Math.sin(currentValue);
+                break;
+            case SINH:
+                result = Math.sinh(currentValue);
+                break;
+            case COS:
+                result = Math.cos(currentValue);
+                break;
+            case COSH:
+                result = Math.cosh(currentValue);
+                break;
+            case TAN:
+                result = Math.tan(currentValue);
+                break;
+            case TANH:
+                result = Math.tanh(currentValue);
                 break;
         }
 
