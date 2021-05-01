@@ -1,7 +1,54 @@
 <resources>
     <string name="app_name">CoolCatsCalculator</string>
     <string name="ac">AC</string>
-    <string name="_177">±</string>
+    <string name="negate">±</string>
     <string name="modules">%</string>
     <string name="division">÷</string>
+    <string name="ten_power_x"><sub>10</sub><sup>x</sup></string>
+    <string name="e_power_x"><sub>e</sub><sup>x</sup></string>
+    <string name="x_power_x"><sub>x</sub><sup>x</sup></string>
+    <string name="x_power_three"><sub>x</sub><sup>3</sup></string>
+    <string name="x_power_two"><sub>x</sub><sup>2</sup></string>
+    <string name="second"><sub>2</sub><sup>nd</sup></string>
+    <string name="log">log<sub>10</sub></string>
+    <string name="ln">ln</string>
+    <string name="y_root_x"></string>
+    <string name="three_root_x"></string>
+    <string name="two_root_x"></string>
+    <string name="one_over_x">1/x</string>
+    <string name="EE">EE</string>
+    <string name="exponent">e</string>
+    <string name="tan">tan</string>
+    <string name="sin">sin</string>
+    <string name="cos">cos</string>
+    <string name="factorial">x!</string>
+    <string name="rand">rand</string>
+    <string name="rad">rad</string>
+    <string name="tanh">tanh</string>
+    <string name="cosh">cosh</string>
+    <string name="sinh">sinh</string>
+    <string name="radions">Rad</string>
+    <string name="mr">mr</string>
+    <string name="m_minus">m-</string>
+    <string name="m_plus">m+</string>
+    <string name="mc">mc</string>
+    <string name="close_round_brace">)</string>
+    <string name="ope_round_brace">(</string>
+    <string name="multiply">×</string>
+    <string name="nine">9</string>
+    <string name="eight">8</string>
+    <string name="seven">7</string>
+    <string name="substract">-</string>
+    <string name="six">6</string>
+    <string name="five">5</string>
+    <string name="four">4</string>
+    <string name="addition">+</string>
+    <string name="three">3</string>
+    <string name="two">2</string>
+    <string name="one">1</string>
+    <string name="equal">=</string>
+    <string name="period">.</string>
+    <string name="zero">0</string>
+    <string name="pi">pi</string>
+
 </resources>
