@@ -538,9 +538,9 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/zero_button"
         style="@style/CalculatorButton"
-        android:background="@color/coolGray"
-        android:layout_width="240dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/coolGray"
         android:text="@string/zero"
         app:layout_constraintEnd_toStartOf="@id/period_button"
         app:layout_constraintHorizontal_chainStyle="spread"

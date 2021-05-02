@@ -142,6 +142,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.period_button:
+                if(!calculatorView.getText().toString().contains(".")){
+                    String temp1 = calculatorView.getText().toString() + ".0";
+                    String temp2 = temp1.substring(0, temp1.length() - 1);
+                    calculatorView.setText(temp2);
+                    currentValue = Double.parseDouble(temp2);
+                }
                 break;
 
             case R.id.negate_button:
@@ -222,6 +228,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.closed_round_brace_button:
+                if(!calculatorView.getText().toString().contains(")")){
+                    String temp1 = calculatorView.getText().toString()+")";
+                    calculatorView.setText(temp1);
+                }
                 break;
 
             case R.id.x_power_two_button:
@@ -245,7 +255,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.open_round_brace_button:
-
+                if(!calculatorView.getText().toString().contains("(")){
+                    String temp1 = calculatorView.getText().toString()+"(";
+                    calculatorView.setText(temp1);
+                }
                 break;
 
             case R.id.second_button:
