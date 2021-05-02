@@ -8,12 +8,18 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView calculatorView;
     private double currentValue = 0.0;
     private double storedValue = 0.0;
+    private double previousStoredValue = 0.0;
+    private boolean isRadians = false;
     private Operand operand = Operand.NONE;
+    NumberFormat numberFormat;
 
     enum Operand {
         NONE,
@@ -45,11 +51,14 @@ public class MainActivity extends AppCompatActivity {
         FACTORIAL,
         Y_ROOT_X
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         calculatorView = findViewById(R.id.output_textview);
+
+        numberFormat = new DecimalFormat("0.######E0");
     }
 
     public void onClick(View view){
@@ -136,10 +145,14 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.negate_button:
-
+                if(currentValue > 0)
+                    currentValue = -currentValue;
+                else
+                    currentValue = +currentValue;
                 break;
 
             case R.id.mr_button:
+                calculatorView.setText(previousStoredValue + "");
                 break;
 
             case R.id.ten_to_power_button:
@@ -151,9 +164,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.exponentional_notational_button:
+                numberFormat.format(currentValue);
                 break;
 
             case R.id.m_minus_button:
+                previousStoredValue = 0;
                 break;
 
             case R.id.e_power_x_button:
@@ -173,6 +188,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.m_plus_button:
+                previousStoredValue = currentValue;
                 break;
 
             case R.id.x_power_y_button:
@@ -192,6 +208,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.mc_button:
+                storedValue = 0.0;
+                currentValue = 0.0;
+                previousStoredValue = 0.0;
                 break;
 
             case R.id.cos_button:
@@ -226,6 +245,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.open_round_brace_button:
+
                 break;
 
             case R.id.second_button:
@@ -240,9 +260,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
                 case R.id.rad_button:
+                    if(isRadians == true)
+                        currentValue = Math.toRadians(currentValue);
+                    else
+                        currentValue = Math.toDegrees(currentValue);
                     break;
-
-
         }
     }
 
