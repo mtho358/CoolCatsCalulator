@@ -211,16 +211,16 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@id/mr_button"
         app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toEndOf="@id/x_power_x_button"
+        app:layout_constraintStart_toEndOf="@id/x_power_y_button"
         app:layout_constraintTop_toBottomOf="@+id/m_plus_button" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/x_power_x_button"
+        android:id="@+id/x_power_y_button"
         style="@style/CalculatorButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/notSoGray"
-        android:text="@string/x_power_x"
+        android:text="@string/x_power_y"
         android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@id/m_minus_button"
         app:layout_constraintHorizontal_chainStyle="spread"
@@ -336,7 +336,7 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@id/mr_button"
         app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toEndOf="@id/x_power_x_button"
+        app:layout_constraintStart_toEndOf="@id/x_power_y_button"
         app:layout_constraintTop_toBottomOf="@+id/e_power_x_button" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -350,7 +350,7 @@
         app:layout_constraintEnd_toStartOf="@id/m_minus_button"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toEndOf="@id/x_power_three_button"
-        app:layout_constraintTop_toBottomOf="@id/x_power_x_button" />
+        app:layout_constraintTop_toBottomOf="@id/x_power_y_button" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/three_root_x"

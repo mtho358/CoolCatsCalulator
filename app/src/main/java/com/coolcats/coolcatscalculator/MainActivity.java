@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +32,18 @@ public class MainActivity extends AppCompatActivity {
         TAN,
         TANH,
         ATAN,
+        POW,
+        POWERTWO,
+        POWERTHREE,
+        SQUAREROOT,
+        LOG_TEN,
+        LOG_TWO,
+        LOG,
+        EXPONENT,
+        TENPOWER,
+        FRACTION,
+        FACTORIAL,
+        Y_ROOT_X
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 calculatorView.setText("0");
                 currentValue = 0.0;
                 break;
+
             case R.id.zero_button:
                 if(currentValue != 0) {
                     double value = currentValue * 10;
@@ -53,96 +67,120 @@ public class MainActivity extends AppCompatActivity {
                     currentValue = value;
                 }
                 break;
+
             case R.id.nine_button:
                 setNumber(9);
                 break;
+
             case R.id.eight_button:
                 setNumber(8);
                 break;
+
             case R.id.seven_button:
                 setNumber(7);
                 break;
-            case R.id.six_button:
+
+                case R.id.six_button:
                 setNumber(6);
                 break;
+
             case R.id.five_button:
                 setNumber(5);
                 break;
+
             case R.id.four_button:
                 setNumber(4);
                 break;
+
             case R.id.three_button:
                 setNumber(3);
                 break;
+
             case R.id.two_button:
                 setNumber(2);
                 break;
+
             case R.id.one_button:
                 setNumber(1);
+                break;
+
+            case R.id.rand_button:
+                currentValue = Math.random();
                 break;
 
             case R.id.multi_button:
                 doCalculation(Operand.MULTIPLY);
                 break;
+
             case R.id.div_button:
                 doCalculation(Operand.DIVISION);
                 break;
+
             case R.id.modulus_button:
                 doCalculation(Operand.MODULUS);
                 break;
+
             case R.id.sub_button:
                 doCalculation(Operand.MINUS);
                 break;
+
             case R.id.plus_button:
                 doCalculation(Operand.PLUS);
                 break;
+
             case R.id.equals_button:
                 getResult();
                 break;
-            case R.id.period_button:
 
+            case R.id.period_button:
                 break;
 
             case R.id.negate_button:
+
                 break;
 
             case R.id.mr_button:
                 break;
 
             case R.id.ten_to_power_button:
+                doCalculation(operand.TENPOWER);
                 break;
 
             case R.id.log_button:
+                doCalculation(operand.LOG_TEN);
                 break;
 
             case R.id.exponentional_notational_button:
-                break;
-
-            case R.id.rand_button:
                 break;
 
             case R.id.m_minus_button:
                 break;
 
             case R.id.e_power_x_button:
+                doCalculation(operand.EXPONENT);
                 break;
 
             case R.id.ln_button:
+                doCalculation(operand.LOG);
                 break;
 
             case R.id.e_button:
+                currentValue = Math.E;
                 break;
 
             case R.id.pi_button:
+                currentValue = Math.PI;
                 break;
 
             case R.id.m_plus_button:
                 break;
 
-            case R.id.x_power_x_button:
+            case R.id.x_power_y_button:
+                doCalculation(operand.POW);
                 break;
 
             case R.id.y_root_x:
+                doCalculation(operand.Y_ROOT_X);
                 break;
 
             case R.id.tan_button:
@@ -168,9 +206,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.x_power_two_button:
+                doCalculation(operand.POWERTWO);
                 break;
 
             case R.id.two_root_x:
+                doCalculation(operand.SQUAREROOT);
                 break;
 
             case R.id.three_root_x:
@@ -192,14 +232,15 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.one_over_x:
+                doCalculation(operand.FRACTION);
                 break;
 
             case R.id.factorial_button:
+                doCalculation(operand.FACTORIAL);
                 break;
 
                 case R.id.rad_button:
                     break;
-
 
 
         }
@@ -264,6 +305,50 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case ATAN:
                 result = Math.atan(currentValue);
+                break;
+            case POW:
+                result = Math.pow(storedValue, currentValue);
+                break;
+            case TENPOWER:
+                result = Math.pow(10, currentValue);
+                break;
+            case SQUAREROOT:
+                result = Math.sqrt(currentValue);
+                break;
+            case POWERTWO:
+                result = Math.pow(currentValue, 2.0);
+                break;
+            case POWERTHREE:
+                result = Math.pow(currentValue, 3.0);
+                break;
+            case LOG_TEN:
+                result = Math.log10(currentValue);
+                break;
+            case LOG_TWO:
+                break;
+            case LOG:
+                result = Math.log(currentValue);
+                break;
+            case EXPONENT:
+                result = Math.exp(currentValue);
+                break;
+            case FRACTION:
+                if(currentValue != 0){
+                    result = 1 / currentValue;
+                }else{
+                    Toast.makeText(this, "Not a number", Toast.LENGTH_SHORT);
+                }
+                break;
+            case FACTORIAL:
+                int i, fact = 1;
+
+                for(i = 1; i <= currentValue; i++) {
+                    fact = fact * i;
+                }
+                currentValue = fact;
+                break;
+            case Y_ROOT_X:
+                result = Math.round(Math.pow(storedValue, 1/currentValue));
                 break;
         }
 
